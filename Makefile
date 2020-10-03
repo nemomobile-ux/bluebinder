@@ -10,7 +10,7 @@ endif
 build: bluebinder
 
 bluebinder: bluebinder.c
-	gcc $(CFLAGS) -Wall -flto $^ `pkg-config --cflags --libs $(DEPEND_LIBS)` -DUSE_SYSTEMD=$(USE_SYSTEMD) -o $@
+	gcc $(CFLAGS) -g -Wall -flto $^ `pkg-config --cflags --libs $(DEPEND_LIBS)` -DUSE_SYSTEMD=$(USE_SYSTEMD) -o $@
 
 install:
 	mkdir -p $(DESTDIR)/usr/sbin
